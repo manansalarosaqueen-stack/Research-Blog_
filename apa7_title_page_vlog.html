@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APA 7th Edition: Title Page | Vlog Guide</title>
+  <style>
+    :root{
+      --bg:#fff8f0; --ink:#292321; --muted:#756b66; --accent:#e76f51;
+      --accent2:#2a9d8f; --yellow:#f4c95d; --card:#ffffff; --line:#eadbd1;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    a{color:inherit}
+    .wrap{width:min(1100px,92%);margin:auto}
+    
+    /* Banner Styles */
+    .banner-container {
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+    .banner-img {
+      width: 100%;
+      height: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    header{background:linear-gradient(135deg,#f4c95d,#e76f51);padding:28px 0 70px;position:relative;overflow:hidden}
+    header:after{content:"";position:absolute;right:-80px;bottom:-100px;width:300px;height:300px;border:55px solid rgba(255,255,255,.22);border-radius:50%}
+    nav{display:flex;justify-content:space-between;align-items:center;gap:20px;position:relative;z-index:1}
+    .logo{font-weight:900;font-size:1.2rem;letter-spacing:.5px}
+    nav a{text-decoration:none;font-weight:bold;font-size:.9rem;margin-left:15px}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-top:55px;position:relative;z-index:1}
+    .eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.78rem;font-weight:900}
+    h1{font-size:clamp(2.5rem,6vw,5.5rem);line-height:.98;margin:15px 0}
+    .hero p{font-size:1.1rem;max-width:650px}
+    .btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;padding:12px 18px;border-radius:999px;font-weight:bold;margin-top:12px}
+    .camera{background:#292321;color:white;border-radius:28px;padding:25px;transform:rotate(3deg);box-shadow:12px 12px 0 rgba(41,35,33,.15)}
+    .camera .screen{background:#fef3c7;color:#292321;border-radius:15px;padding:28px 18px;text-align:center}
+    .camera .screen strong{display:block;font-size:3rem;line-height:1}
+    .record{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#292321;padding:7px 12px;border-radius:999px;font-size:.8rem;font-weight:bold}
+    .dot{width:10px;height:10px;background:#e63946;border-radius:50%}
+    section{padding:65px 0}
+    .section-head{max-width:720px;margin-bottom:28px}
+    .section-head h2{font-size:clamp(1.8rem,4vw,3rem);line-height:1.1;margin:8px 0}
+    .section-head p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:24px;
+      box-shadow:0 6px 0 #f0dfd4;
+      position:relative;
+      overflow:hidden;
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+      cursor:pointer;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0 auto auto 0;
+      width:100%;
+      height:5px;
+      background:linear-gradient(90deg,var(--accent),var(--yellow),var(--accent2));
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .3s ease;
+    }
+    .card:hover{
+      transform:translateY(-9px) rotate(-.5deg);
+      box-shadow:0 14px 0 #f0dfd4, 0 18px 28px rgba(41,35,33,.12);
+      border-color:var(--accent);
+      background:#fffdf9;
+    }
+    .card:hover::before{transform:scaleX(1)}
+    .card:hover .num{letter-spacing:1px;color:var(--accent2)}
+    .card:hover h3{color:var(--accent)}
+    .card .num{font-size:.8rem;font-weight:900;color:var(--accent);transition:color .25s ease, letter-spacing .25s ease}
+    .card h3{margin:8px 0;font-size:1.25rem}
+    .card p{color:var(--muted);font-size:.95rem}
+    .tag{display:inline-block;background:#e7f5f2;color:#176b61;padding:4px 9px;border-radius:999px;font-size:.75rem;font-weight:bold}
+    
+    /* Title Page Preview Box */
+    .preview-box {
+      background: #fff;
+      border: 2px dashed var(--accent);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      text-align: center;
+      margin-top: 25px;
+      position: relative;
+    }
+    .paper-sim {
+      background: #ffffff;
+      border: 1px solid #dcdcdc;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 50px 30px 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      font-family: "Times New Roman", Times, serif;
+      text-align: center;
+      color: #000;
+    }
+    .paper-sim .page-num {
+      text-align: right;
+      font-size: 0.9rem;
+      margin-bottom: 40px;
+    }
+    .paper-sim .paper-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    .paper-sim .paper-author {
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+    .paper-sim .paper-meta {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .timeline{display:grid;gap:15px}
+    .step{display:grid;grid-template-columns:70px 1fr;gap:20px;align-items:start}
+    .stepno{background:var(--accent2);color:#fff;border-radius:18px;padding:15px;text-align:center;font-size:1.3rem;font-weight:900}
+    .stepbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+    .stepbox h3{margin:0 0 5px}
+    .stepbox p{margin:0;color:var(--muted)}
+    .note{background:#292321;color:#fff;border-radius:24px;padding:30px}
+    .note h2{margin-top:0}
+    .note li{margin:8px 0}
+    .checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .check{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px}
+    .check b{color:var(--accent2)}
+    footer{background:#292321;color:#fff;padding:35px 0;text-align:center}
+    footer p{color:#d8cbc4}
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .card,.card::before,.card .num{transition:none}
+      .card:hover{transform:none}
+    }
+    @media(max-width:800px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .banner-container, .banner-img { max-height: 250px; }
+    }
+    @media(max-width:560px){
+      nav{align-items:flex-start;flex-direction:column}
+      nav a{margin:0 12px 0 0}
+      .grid,.checklist{grid-template-columns:1fr}
+      .step{grid-template-columns:52px 1fr;gap:12px}
+      .stepno{padding:10px}
+      .banner-container, .banner-img { max-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Banner Section -->
+  <div class="banner-container">
+    <img src="images/images (4).jpg" alt="APA 7th Edition Title Page Guide Banner" class="banner-img" />
+  </div>
+
+  <header id="top">
+    <div class="wrap">
+      <nav>
+        <div class="logo">RESEARCH VLOG 🎥</div>
+        <div>
+          <a href="#elements">Elements</a>
+          <a href="#example">Visual Layout</a>
+          <a href="#rules">Rules</a>
+        </div>
+      </nav>
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Deep Dive · Front Matter</div>
+          <h1>The Title Page<br>in APA 7th Edition</h1>
+          <p>Your thesis title page is your study’s front cover and cover image combined. Let’s break down every element you need for student papers!</p>
+          <a class="btn" href="#elements">Explore the layout ↓</a>
+        </div>
+        <div class="camera">
+          <div class="record"><span class="dot"></span> NOW RECORDING</div>
+          <div class="screen">
+            <strong>PAGE 01</strong>
+            <p>First impressions matter—make your title page clean, precise, and standardized.</p>
+            <span class="tag">TITLE PAGE SPOTLIGHT</span>
+          </div>
+          <p style="margin-bottom:0">🎬 “Welcome to Episode 1: The Title Page!”</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="elements">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Episode 01 · Anatomy of the Page</div>
+          <h2>Key Elements of an APA 7 Title Page</h2>
+          <p>APA 7 simplified title pages for student papers by removing the running head (unless your school specifically requests it).</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="num">01 / TOP RIGHT</div>
+            <h3>Page Number</h3>
+            <p>Positioned flush right in the header section starting on page 1. Use standard Arabic numerals (1).</p>
+          </article>
+          <article class="card">
+            <div class="num">02 / CENTERED & BOLD</div>
+            <h3>Paper Title</h3>
+            <p>Placed 3–4 lines down from the top margin. Written in <b>Title Case</b>, centered, bolded, and double-spaced.</p>
+          </article>
+          <article class="card">
+            <div class="num">03 / AUTHOR NAME</div>
+            <h3>Author Byline</h3>
+            <p>Positioned 1–2 blank lines after the title. Include First Name, Middle Initial(s), and Last Name without titles (e.g., omit "Dr." or "Mr.").</p>
+          </article>
+          <article class="card">
+            <div class="num">04 / AFFILIATION</div>
+            <h3>Institutional Affiliation</h3>
+            <p>States the specific department/college and university name (e.g., <i>Department of Psychology, University of Example</i>).</p>
+          </article>
+          <article class="card">
+            <div class="num">05 / COURSE INFO</div>
+            <h3>Course Number & Name</h3>
+            <p>Includes the course code and full title (e.g., <i>PSY 499: Senior Research Seminar & Thesis</i>).</p>
+          </article>
+          <article class="card">
+            <div class="num">06 / INSTRUCTOR</div>
+            <h3>Instructor Name</h3>
+            <p>Includes the instructor’s or adviser’s full title and name (e.g., <i>Dr. Maria Santos</i>) on its own line.</p>
+          </article>
+          <article class="card">
+            <div class="num">07 / SUBMISSION DATE</div>
+            <h3>Due Date</h3>
+            <p>Written in standard date format (e.g., <i>October 15, 2026</i>) reflecting the submission date.</p>
+          </article>
+          <article class="card">
+            <div class="num">08 / PROFESSIONAL OPTION</div>
+            <h3>Author Note (Optional)</h3>
+            <p>Primarily for professional papers or publications. Placed at the bottom half to list ORCID iDs, disclosures, or contact info.</p>
+          </article>
+          <article class="card">
+            <div class="num">09 / INSTITUTIONAL VARIATIONS</div>
+            <h3>School Guidelines</h3>
+            <p>Some universities require extra lines like panelist approval dates or degree specifications. Always check your school handbook!</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="example" style="background:#fff1e7">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Episode 02 · Visual Demonstration</div>
+          <h2>What a Student Title Page Looks Like</h2>
+          <p>Here is a simplified visual representation of the elements arranged on an APA 7th student paper title page.</p>
+        </div>
+        
+        <div class="preview-box">
+          <span class="tag" style="margin-bottom:15px;">APA 7 STUDENT FORMAT LAYOUT</span>
+          <div class="paper-sim">
+            <div class="page-num">1</div>
+            <br>
+            <div class="paper-title">
+              Impact of Social Media Vlog Format on Academic Engagement:<br>An APA 7th Edition Student Guide
+            </div>
+            <div class="paper-author">
+              Alex R. Morgan
+            </div>
+            <div class="paper-meta">
+              Department of Communication, College of Arts and Sciences<br>
+              Central State University<br>
+              COMM 490: Senior Thesis Project<br>
+              Dr. Eleanor Vance<br>
+              November 20, 2026
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rules">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Episode 03 · Pro-Tips</div>
+          <h2>Title Page Quick Checklist</h2>
+        </div>
+        <div class="checklist">
+          <div class="check">✅ <b>Title Length:</b> Keep the title focused, concise, and clear (typically 10–12 words).</div>
+          <div class="check">✅ <b>No Running Head:</b> APA 7 student papers do not need a running head unless specified by your instructor.</div>
+          <div class="check">✅ <b>Formatting:</b> Double-space all lines on the title page, just like the rest of your paper.</div>
+          <div class="check">✅ <b>Font Choice:</b> Use standard APA fonts (e.g., 12 pt Times New Roman, 11 pt Arial, or 11 pt Calibri).</div>
+          <div class="check">✅ <b>Capitalization:</b> Use Title Case for the paper title (capitalize major words and words with 4+ letters).</div>
+          <div class="check">✅ <b>Margins:</b> Maintain 1-inch (2.54 cm) margins on all four sides of the page.</div>
+        </div>
+        <div class="note" style="margin-top:28px">
+          <h2>🎤 Vlogger’s Recap</h2>
+          <p>“Remember, your title page sets the tone for your entire thesis project! Keep it clean, double-check your spellings, and follow your institution’s layout guidelines. Next up: The Abstract section!”</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>RESEARCH VLOG 🎥</strong>
+      <p>APA 7th Edition · Title Page Deep Dive · Educational Guide</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

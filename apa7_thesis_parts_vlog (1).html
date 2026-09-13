@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APA 7th Edition: Parts of a Thesis | Vlog Guide</title>
+  <style>
+    :root{
+      --bg:#fff8f0; --ink:#292321; --muted:#756b66; --accent:#e76f51;
+      --accent2:#2a9d8f; --yellow:#f4c95d; --card:#ffffff; --line:#eadbd1;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    a{color:inherit}
+    .wrap{width:min(1100px,92%);margin:auto}
+    
+    /* Banner Styles */
+    .banner-container {
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+    .banner-img {
+      width: 100%;
+      height: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    header{background:linear-gradient(135deg,#f4c95d,#e76f51);padding:28px 0 70px;position:relative;overflow:hidden}
+    header:after{content:"";position:absolute;right:-80px;bottom:-100px;width:300px;height:300px;border:55px solid rgba(255,255,255,.22);border-radius:50%}
+    nav{display:flex;justify-content:space-between;align-items:center;gap:20px;position:relative;z-index:1}
+    .logo{font-weight:900;font-size:1.2rem;letter-spacing:.5px}
+    nav a{text-decoration:none;font-weight:bold;font-size:.9rem;margin-left:15px}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-top:55px;position:relative;z-index:1}
+    .eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.78rem;font-weight:900}
+    h1{font-size:clamp(2.5rem,6vw,5.5rem);line-height:.98;margin:15px 0}
+    .hero p{font-size:1.1rem;max-width:650px}
+    .btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;padding:12px 18px;border-radius:999px;font-weight:bold;margin-top:12px}
+    .camera{background:#292321;color:white;border-radius:28px;padding:25px;transform:rotate(3deg);box-shadow:12px 12px 0 rgba(41,35,33,.15)}
+    .camera .screen{background:#fef3c7;color:#292321;border-radius:15px;padding:28px 18px;text-align:center}
+    .camera .screen strong{display:block;font-size:3rem;line-height:1}
+    .record{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#292321;padding:7px 12px;border-radius:999px;font-size:.8rem;font-weight:bold}
+    .dot{width:10px;height:10px;background:#e63946;border-radius:50%}
+    section{padding:65px 0}
+    .section-head{max-width:720px;margin-bottom:28px}
+    .section-head h2{font-size:clamp(1.8rem,4vw,3rem);line-height:1.1;margin:8px 0}
+    .section-head p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:24px;
+      box-shadow:0 6px 0 #f0dfd4;
+      position:relative;
+      overflow:hidden;
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+      cursor:pointer;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0 auto auto 0;
+      width:100%;
+      height:5px;
+      background:linear-gradient(90deg,var(--accent),var(--yellow),var(--accent2));
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .3s ease;
+    }
+    .card:hover{
+      transform:translateY(-9px) rotate(-.5deg);
+      box-shadow:0 14px 0 #f0dfd4, 0 18px 28px rgba(41,35,33,.12);
+      border-color:var(--accent);
+      background:#fffdf9;
+    }
+    .card:hover::before{transform:scaleX(1)}
+    .card:hover .num{letter-spacing:1px;color:var(--accent2)}
+    .card:hover h3{color:var(--accent)}
+    .card .num{font-size:.8rem;font-weight:900;color:var(--accent);transition:color .25s ease, letter-spacing .25s ease}
+    .card h3{margin:8px 0;font-size:1.25rem}
+    .card p{color:var(--muted);font-size:.95rem}
+    .tag{display:inline-block;background:#e7f5f2;color:#176b61;padding:4px 9px;border-radius:999px;font-size:.75rem;font-weight:bold}
+    .timeline{display:grid;gap:15px}
+    .step{display:grid;grid-template-columns:70px 1fr;gap:20px;align-items:start}
+    .stepno{background:var(--accent2);color:#fff;border-radius:18px;padding:15px;text-align:center;font-size:1.3rem;font-weight:900}
+    .stepbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+    .stepbox h3{margin:0 0 5px}
+    .stepbox p{margin:0;color:var(--muted)}
+    .note{background:#292321;color:#fff;border-radius:24px;padding:30px}
+    .note h2{margin-top:0}
+    .note li{margin:8px 0}
+    .checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .check{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px}
+    .check b{color:var(--accent2)}
+    footer{background:#292321;color:#fff;padding:35px 0;text-align:center}
+    footer p{color:#d8cbc4}
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .card,.card::before,.card .num{transition:none}
+      .card:hover{transform:none}
+    }
+    @media(max-width:800px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .banner-container, .banner-img { max-height: 250px; }
+    }
+    @media(max-width:560px){
+      nav{align-items:flex-start;flex-direction:column}
+      nav a{margin:0 12px 0 0}
+      .grid,.checklist{grid-template-columns:1fr}
+      .step{grid-template-columns:52px 1fr;gap:12px}
+      .stepno{padding:10px}
+      .banner-container, .banner-img { max-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Banner Section -->
+  <div class="banner-container">
+    <img src="images/images (4).jpg" alt="APA 7th Edition Thesis Guide Banner" class="banner-img" />
+  </div>
+
+  <header id="top">
+    <div class="wrap">
+      <nav>
+        <div class="logo">RESEARCH VLOG 🎥</div>
+        <div>
+          <a href="#parts">Parts</a>
+          <a href="#flow">Order</a>
+          <a href="#tips">Tips</a>
+        </div>
+      </nav>
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Student-friendly thesis guide</div>
+          <h1>APA 7th Edition<br>in Vlog Style</h1>
+          <p>Let’s break down the common parts of a thesis—from the title page to the references—in a simple, vlog-inspired way.</p>
+          <a class="btn" href="#parts">Start the vlog ↓</a>
+        </div>
+        <div class="camera">
+          <div class="record"><span class="dot"></span> NOW RECORDING</div>
+          <div class="screen">
+            <strong>APA 7</strong>
+            <p>Research made organized, readable, and properly credited.</p>
+            <span class="tag">THESIS EDITION</span>
+          </div>
+          <p style="margin-bottom:0">🎬 “Hi researchers! Welcome back to the channel!”</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="parts">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Chapter 01 · The main content</div>
+          <h2>The parts you’ll usually see in a thesis</h2>
+          <p>Schools may use different institutional formats. Always follow your adviser’s or department’s prescribed template when it differs from this general guide.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="num">01 / FRONT MATTER</div><h3>Title Page</h3><p>Contains the thesis title, author, institutional affiliation, degree or course, and submission date. Follow your school’s required arrangement.</p></article>
+          <article class="card"><div class="num">02 / FRONT MATTER</div><h3>Abstract</h3><p>A brief overview of the study: problem, method, major findings, and conclusion. APA papers commonly use a concise abstract, often around 150–250 words.</p></article>
+          <article class="card"><div class="num">03 / FRONT MATTER</div><h3>Acknowledgments</h3><p>Recognizes people or institutions that supported the research. This is often required by schools but is not a universal APA manuscript element.</p></article>
+          <article class="card"><div class="num">04 / FRONT MATTER</div><h3>Table of Contents</h3><p>Lists chapters, headings, and page numbers. Include lists of tables and figures if required by your institution.</p></article>
+          <article class="card"><div class="num">05 / CHAPTER 1</div><h3>Introduction</h3><p>Introduces the topic, background, research gap, purpose, research questions, significance, scope, and important terms.</p></article>
+          <article class="card"><div class="num">06 / CHAPTER 2</div><h3>Review of Related Literature</h3><p>Synthesizes theories, previous studies, concepts, and evidence related to your research problem. Cite sources using APA style.</p></article>
+          <article class="card"><div class="num">07 / CHAPTER 3</div><h3>Methodology</h3><p>Explains the research design, participants or data sources, instruments, procedures, ethical considerations, and data-analysis plan.</p></article>
+          <article class="card"><div class="num">08 / CHAPTER 4</div><h3>Results / Findings</h3><p>Presents what the data showed through text, tables, and figures. Avoid repeating every value already visible in a table.</p></article>
+          <article class="card"><div class="num">09 / CHAPTER 5</div><h3>Discussion & Conclusion</h3><p>Interprets findings, connects them to literature, explains implications, states limitations, and gives recommendations when appropriate.</p></article>
+          <article class="card"><div class="num">10 / BACK MATTER</div><h3>References</h3><p>Lists every source cited in the thesis. Use APA 7 author-date citations and a matching reference entry for each cited work.</p></article>
+          <article class="card"><div class="num">11 / BACK MATTER</div><h3>Appendices</h3><p>Includes supporting materials such as questionnaires, interview guides, consent forms, letters, raw summaries, or extra tables.</p></article>
+          <article class="card"><div class="num">12 / SCHOOL REQUIREMENT</div><h3>Other Pages</h3><p>May include approval sheets, certification, curriculum vitae, plagiarism report, ethics clearance, or biographical information depending on the school.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow" style="background:#fff1e7">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Chapter 02 · The usual sequence</div>
+          <h2>Think of your thesis as a vlog playlist</h2>
+          <p>Each part has a job. Together, they tell the story of your research.</p>
+        </div>
+        <div class="timeline">
+          <div class="step"><div class="stepno">1</div><div class="stepbox"><h3>Hook the audience — Title & Abstract</h3><p>Tell readers what your study is about and give them a quick preview of the whole research.</p></div></div>
+          <div class="step"><div class="stepno">2</div><div class="stepbox"><h3>Set the context — Introduction & RRL</h3><p>Explain why the problem matters and what previous researchers have already discovered.</p></div></div>
+          <div class="step"><div class="stepno">3</div><div class="stepbox"><h3>Show your process — Methodology</h3><p>Make the research process clear enough for readers to understand and evaluate.</p></div></div>
+          <div class="step"><div class="stepno">4</div><div class="stepbox"><h3>Reveal the content — Results</h3><p>Present the evidence gathered from your participants, documents, tests, observations, or other data.</p></div></div>
+          <div class="step"><div class="stepno">5</div><div class="stepbox"><h3>Wrap up — Discussion, Conclusion & References</h3><p>Explain what the results mean, answer the research questions, and credit every source used.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tips">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Chapter 03 · APA 7 essentials</div>
+          <h2>Before you hit “submit”</h2>
+        </div>
+        <div class="checklist">
+          <div class="check">✅ <b>Use consistent headings.</b><br>Apply the required APA heading levels and your school’s chapter format.</div>
+          <div class="check">✅ <b>Cite borrowed ideas.</b><br>Use author-date in-text citations and include matching reference entries.</div>
+          <div class="check">✅ <b>Format tables and figures.</b><br>Number them, give descriptive titles, and add notes when needed.</div>
+          <div class="check">✅ <b>Keep the language academic.</b><br>Be clear, precise, objective, and consistent in terminology.</div>
+          <div class="check">✅ <b>Check the reference list.</b><br>Use a hanging indent, alphabetical order, and correct DOI/URL formatting when applicable.</div>
+          <div class="check">✅ <b>Follow institutional rules.</b><br>Margins, front matter, chapter labels, signatures, and page order may be school-specific.</div>
+        </div>
+        <div class="note" style="margin-top:28px">
+          <h2>🎤 Vlogger’s closing line</h2>
+          <p>“And that’s it, researchers! Remember: APA 7th edition helps you present your work clearly and give credit where credit is due. Your school’s thesis manual is still your final guide. See you in the next research vlog!”</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>RESEARCH VLOG 🎥</strong>
+      <p>APA 7th Edition · Parts of a Thesis · Educational guide</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

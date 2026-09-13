@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APA 7th Edition Vlog Guide</title>
+  <style>
+    :root{
+      --bg:#fff8f0; --ink:#292321; --muted:#756b66; --accent:#e76f51;
+      --accent2:#2a9d8f; --yellow:#f4c95d; --card:#ffffff; --line:#eadbd1;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    a{color:inherit}
+    .wrap{width:min(1100px,92%);margin:auto}
+    
+    /* Banner Styles */
+    .banner-container {
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+    .banner-img {
+      width: 100%;
+      height: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    header{background:linear-gradient(135deg,#f4c95d,#e76f51);padding:28px 0 70px;position:relative;overflow:hidden}
+    header:after{content:"";position:absolute;right:-80px;bottom:-100px;width:300px;height:300px;border:55px solid rgba(255,255,255,.22);border-radius:50%}
+    nav{display:flex;justify-content:space-between;align-items:center;gap:20px;position:relative;z-index:1}
+    .logo{font-weight:900;font-size:1.2rem;letter-spacing:.5px}
+    nav a{text-decoration:none;font-weight:bold;font-size:.9rem;margin-left:15px}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-top:55px;position:relative;z-index:1}
+    .eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.78rem;font-weight:900}
+    h1{font-size:clamp(2.5rem,6vw,5.5rem);line-height:.98;margin:15px 0}
+    .hero p{font-size:1.1rem;max-width:650px}
+    .btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;padding:12px 18px;border-radius:999px;font-weight:bold;margin-top:12px}
+    .camera{background:#292321;color:white;border-radius:28px;padding:25px;transform:rotate(3deg);box-shadow:12px 12px 0 rgba(41,35,33,.15)}
+    .camera .screen{background:#fef3c7;color:#292321;border-radius:15px;padding:28px 18px;text-align:center}
+    .camera .screen strong{display:block;font-size:3rem;line-height:1}
+    .record{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#292321;padding:7px 12px;border-radius:999px;font-size:.8rem;font-weight:bold}
+    .dot{width:10px;height:10px;background:#e63946;border-radius:50%}
+    section{padding:65px 0}
+    .section-head{max-width:720px;margin-bottom:28px}
+    .section-head h2{font-size:clamp(1.8rem,4vw,3rem);line-height:1.1;margin:8px 0}
+    .section-head p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card-link{text-decoration:none;color:inherit;display:block}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:24px;
+      box-shadow:0 6px 0 #f0dfd4;
+      position:relative;
+      overflow:hidden;
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+      cursor:pointer;
+      height: 100%;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0 auto auto 0;
+      width:100%;
+      height:5px;
+      background:linear-gradient(90deg,var(--accent),var(--yellow),var(--accent2));
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .3s ease;
+    }
+    .card:hover{
+      transform:translateY(-9px) rotate(-.5deg);
+      box-shadow:0 14px 0 #f0dfd4, 0 18px 28px rgba(41,35,33,.12);
+      border-color:var(--accent);
+      background:#fffdf9;
+    }
+    .card:hover::before{transform:scaleX(1)}
+    .card:hover .num{letter-spacing:1px;color:var(--accent2)}
+    .card:hover h3{color:var(--accent)}
+    .card .num{font-size:.8rem;font-weight:900;color:var(--accent);transition:color .25s ease, letter-spacing .25s ease}
+    .card h3{margin:8px 0;font-size:1.25rem}
+    .card p{color:var(--muted);font-size:.95rem}
+    .tag{display:inline-block;background:#e7f5f2;color:#176b61;padding:4px 9px;border-radius:999px;font-size:.75rem;font-weight:bold}
+    
+    .timeline{display:grid;gap:15px}
+    .step{display:grid;grid-template-columns:70px 1fr;gap:20px;align-items:start}
+    .stepno{background:var(--accent2);color:#fff;border-radius:18px;padding:15px;text-align:center;font-size:1.3rem;font-weight:900}
+    .stepbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+    .stepbox h3{margin:0 0 5px}
+    .stepbox p{margin:0;color:var(--muted)}
+    .note{background:#292321;color:#fff;border-radius:24px;padding:30px}
+    .note h2{margin-top:0}
+    .note li{margin:8px 0}
+    .checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .check{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px}
+    .check b{color:var(--accent2)}
+    footer{background:#292321;color:#fff;padding:35px 0;text-align:center}
+    footer p{color:#d8cbc4}
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .card,.card::before,.card .num{transition:none}
+      .card:hover{transform:none}
+    }
+    @media(max-width:800px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .banner-container, .banner-img { max-height: 250px; }
+    }
+    @media(max-width:560px){
+      nav{align-items:flex-start;flex-direction:column}
+      nav a{margin:0 12px 0 0}
+      .grid,.checklist{grid-template-columns:1fr}
+      .step{grid-template-columns:52px 1fr;gap:12px}
+      .stepno{padding:10px}
+      .banner-container, .banner-img { max-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Banner Section -->
+  <div class="banner-container">
+    <img src="images/images (4).jpg" alt="APA 7th Edition Thesis Writing Vlog Guide Banner" class="banner-img" />
+  </div>
+
+  <header id="top">
+    <div class="wrap">
+      <nav>
+        <div class="logo">RESEARCH VLOG 🎥</div>
+        <div>
+          <a href="#episodes">Episodes</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#tips">Pro Tips</a>
+        </div>
+      </nav>
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Thesis Writing Series · APA 7th Edition</div>
+          <h1>Master Your Paper<br>Like a Pro Vlogger</h1>
+          <p>A fun, visual breakdown of key manuscript sections—from Title Page to References—formatted cleanly using current APA 7 guidelines.</p>
+          <a class="btn" href="#episodes">Start Watching Below ↓</a>
+        </div>
+        <div class="camera">
+          <div class="record"><span class="dot"></span> REC 4K</div>
+          <div class="screen">
+            <strong>APA 7</strong>
+            <p>Step-by-step thesis creation simplified for students.</p>
+            <span class="tag">EPISODE GUIDE</span>
+          </div>
+          <p style="margin-bottom:0">🎬 “Hey everyone! Welcome back to my research channel...”</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="episodes">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Season 1 · Main Sections</div>
+          <h2>Manuscript Breakdown Episodes</h2>
+          <p>Click any episode card below to jump straight into detailed formatting instructions and examples.</p>
+        </div>
+        <div class="grid">
+          <!-- LINKED TITLE PAGE CARD -->
+          <a href="apa7_title_page_vlog.html" class="card-link">
+            <article class="card">
+              <div class="num">01 / FRONT MATTER</div>
+              <h3>Title Page</h3>
+              <p>Includes your study title, author byline, institutional affiliation, course details, instructor, and date.</p>
+              <span class="tag">Episode 1 · Click to View</span>
+            </article>
+          </a>
+
+          <article class="card">
+            <div class="num">02 / OVERVIEW</div>
+            <h3>Abstract & Keywords</h3>
+            <p>A 150–250 word summary of your objective, method, results, and conclusion with relevant search terms.</p>
+            <span class="tag">Episode 2</span>
+          </article>
+          <article class="card">
+            <div class="num">03 / CONTEXT</div>
+            <h3>Introduction</h3>
+            <p>Frame the research problem, review relevant literature, state hypotheses, and define the study scope.</p>
+            <span class="tag">Episode 3</span>
+          </article>
+          <article class="card">
+            <div class="num">04 / PROCEDURE</div>
+            <h3>Methodology</h3>
+            <p>Describe participants, materials, measures, design, data collection, and step-by-step procedures clearly.</p>
+            <span class="tag">Episode 4</span>
+          </article>
+          <article class="card">
+            <div class="num">05 / FINDINGS</div>
+            <h3>Results</h3>
+            <p>Present data objectively using statistical findings, main outcomes, concise summary tables, and clear charts.</p>
+            <span class="tag">Episode 5</span>
+          </article>
+          <article class="card">
+            <div class="num">06 / ANALYSIS</div>
+            <h3>Discussion</h3>
+            <p>Interpret results, address theoretical implications, highlight study limitations, and suggest future research.</p>
+            <span class="tag">Episode 6</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" style="background:#fff1e7">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Production Flow · Step-by-Step</div>
+          <h2>How to Write Your Paper Efficiently</h2>
+        </div>
+        <div class="timeline">
+          <div class="step">
+            <div class="stepno">01</div>
+            <div class="stepbox">
+              <h3>Outline & Gather Sources</h3>
+              <p>Organize your preliminary literature search, define variables, and set your thesis focus before writing.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="stepno">02</div>
+            <div class="stepbox">
+              <h3>Format Front Matter & Structure</h3>
+              <p>Set up your Title Page in APA 7 layout, configure 1-inch margins, and choose standard typography.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="stepno">03</div>
+            <div class="stepbox">
+              <h3>Draft Core Body Sections</h3>
+              <p>Write your Introduction, Methodology, Results, and Discussion in sequence while inserting citations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tips">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Quick Reference · Formatting Checklist</div>
+          <h2>Essential APA 7 Rules</h2>
+        </div>
+        <div class="checklist">
+          <div class="check">✅ <b>Font Standards:</b> Use 12 pt Times New Roman, 11 pt Arial, or 11 pt Calibri throughout.</div>
+          <div class="check">✅ <b>Margins & Spacing:</b> Maintain 1-inch margins on all sides and double-space all body text.</div>
+          <div class="check">✅ <b>Header Page Numbers:</b> Place page numbers flush right in the top header starting on page 1.</div>
+          <div class="check">✅ <b>Headings Hierarchy:</b> Apply clear APA 7 bolded and italicized heading levels (Levels 1–5).</div>
+        </div>
+        <div class="note" style="margin-top:28px">
+          <h2>🎤 Creator's Final Note</h2>
+          <p>“Consistency is key to academic success! Click through each episode card to master each section step-by-step.”</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>RESEARCH VLOG 🎥</strong>
+      <p>APA 7th Edition Thesis Writing Series · Educational Guide</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
